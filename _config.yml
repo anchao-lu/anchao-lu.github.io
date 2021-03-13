@@ -26,13 +26,35 @@ description: >- # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: AnchaoLu
+github_username: anchao-lu
 
 # Build settings
+markdown: kramdown
 theme: null
 plugins:
   - jekyll-feed
+  
+# defaults setting
+defaults:
+  -
+    scope:
+      type: posts
+      path: _posts
+    values:
+      is_post: true
+      layout: post
+      permalink: /blog/:categories/:title/
+  -
+    scope:
+      type: pages
+      path: _pages
+    values:
+      is_post: false
+      layout: default
+  
+# Custom _pages directory
+include: [_pages]
 
 # Exclude from processing.
 # The following items will not be processed, by default.
